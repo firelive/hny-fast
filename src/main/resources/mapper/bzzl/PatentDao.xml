@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.bzzl.dao.PatentDao">
+
+    <!-- 查询所有 -->
+    <select id="queryDataList"  resultType="io.renren.modules.bzzl.entity.PatentdowEntity">
+        SELECT id as id,
+        patent_area as patentArea,
+        patent_name as patentName,
+        patent_code as patentCode,
+        patent_type as patentType,
+        patent_unit as patentUnit,
+        other_info as otherInfo
+        FROM patent
+    </select>
+
+</mapper>

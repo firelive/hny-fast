@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.company.dao.LocationDao">
+
+    <!-- 查询省 -->
+    <select id="queryPName"  resultType="java.util.Map">
+        select name as label,parent as value from china_district WHERE parent= '86'
+        group by label,value
+    </select>
+    <!--查询市县区-->
+    <select id="queryCName" resultType="java.util.Map">
+        select name as label,name as value  from china_district WHERE 1=1
+        group by label, value
+    </select>
+    <select id="queryByCode" resultType="java.lang.String">
+            select code from china_district WHERE code=#{code}
+    </select>
+</mapper>

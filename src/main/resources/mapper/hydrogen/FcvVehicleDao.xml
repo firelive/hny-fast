@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.FcvVehicleDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.FcvVehicleEntity">
+        select * from fcv_vehicle
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.FcvdowEntity">
+        SELECT fcid as fcid,
+        fcpublished_date as fcpublishedDate,
+        company_name as companyName,
+        brand_name as brandName,
+        vehicle_code as vehicleCode,
+        car_type as carType,
+        car_length as carLength,
+        width as width,
+        high as high,
+        total_weight as totalWeight,
+        vehicle_mass as vehicleMass,
+        speed as speed,
+        fuel_type as fuelType,
+        km as km,
+        fuelcell_producer as fuelcellProducer,
+        rated_power as ratedPower,
+        peak_power as peakPower
+        FROM fcv_vehicle
+    </select>
+
+</mapper>

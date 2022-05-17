@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HygPolicyDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HygPolicyEntity">
+        select * from pr_company
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HygPodowEntity">
+        SELECT hpid as hpid,
+        published_date as publishedDate,
+        hypolicy_name as hypolicyName,
+        department_name as departmentName,
+        hypolicy_code as hypolicyCode,
+        hyp_info as hypInfo,
+        hypolicy_link as hypolicyLink,
+        other_info as otherInfo
+        FROM hyg_policy
+    </select>
+</mapper>

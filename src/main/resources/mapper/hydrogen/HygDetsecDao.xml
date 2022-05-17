@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HygDetsecDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HygDetsecEntity">
+        select * from hyg_detsec WHERE 1=1
+    </select>
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HygDetdowEntity">
+        SELECT dsid as dsid,
+        location as location,
+        area as area,
+        project_platform as projectPlatform,
+        investment_sub as investmentSub,
+        start_date as startDate,
+        test_content as testContent,
+        quality as quality,
+        customer as customer
+        FROM hyg_detsec
+    </select>
+
+</mapper>

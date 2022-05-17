@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HygStationDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HygStationEntity">
+        select * from hyg_station
+        WHERE 1 = 1
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HygStadowEntity">
+        SELECT
+        co_province as coProvince,
+        co_city as coCity,
+        station_name as stationName,
+        build_time as buildTime,
+        remove_time as removeTime,
+        station_status as stationStatus,
+        supply as supply,
+        dispenser as dispenser,
+        compressor as compressor,
+        supplyer as supplyer,
+        amount as amount,
+        operation as operation,
+        gas_supply as gasSupply,
+        station_level as stationLevel,
+        station_type as stationType,
+        invested as invested,
+        square as square,
+        storage_capacity as storageCapacity,
+        stay as stay,
+        move as move,
+        total_storage as totalStorage,
+        build as build
+        FROM hyg_station
+    </select>
+
+</mapper>

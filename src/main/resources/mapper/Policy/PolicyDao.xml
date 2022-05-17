@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.policy.dao.PolicyDao">
+
+
+    <select id="queryPage"  resultType="io.renren.modules.policy.entity.PolicyEntity">
+<!--        <bind name="policy_type" value="'%' + _parameter.getpolicy_type() + '%'" />-->
+        select * from policy
+        <where>
+        <if test="policy_type != null and policy_type != ''">
+            and policy_type like concat('%',concat(#{policy_type},'%'))
+        </if>
+        </where>
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.policy.entity.PodowEntity">
+        SELECT pid as pid,
+        policy_type as policyType,
+        policy_date as policyDate,
+        policy_name as policyName,
+        department_name as departmentName,
+        policy_code as policyCode,
+        policy_link as policyLink,
+        info_content as infoContent
+        FROM policy
+    </select>
+
+</mapper>

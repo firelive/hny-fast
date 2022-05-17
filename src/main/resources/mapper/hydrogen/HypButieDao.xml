@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HypButieDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HypButieEntity">
+        select * from hyp_butie WHERE 1=1
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HypBudowEntity">
+        SELECT
+        btid as btid,
+        pubulish_department as pubulishDepartment,
+        document_name as documentName,
+        published_date as publishedDate,
+        document_code as documentCode,
+        document_link as documentLink,
+        butie_content as butieContent,
+        timeline as timeline,
+        other_info as otherInfo
+        FROM hyp_butie
+    </select>
+
+</mapper>

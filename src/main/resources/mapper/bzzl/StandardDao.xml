@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.bzzl.dao.StandardDao">
+
+
+<!--    <select id="queryDataList"  resultType="io.renren.modules.bzzl.entity.StandardEntity">-->
+<!--        select * from standard,sp_area WHERE standard.stand_id=sp_area.spid-->
+<!--    </select>-->
+    <update id="updateDelete"  parameterType="io.renren.modules.bzzl.entity.StandardEntity">
+        update standard set deleted=0 where id =#{id}
+    </update>
+    <select id="queryDataList" resultType="io.renren.modules.bzzl.entity.StanddowEntity">
+        SELECT id as id,
+        stand_area as standArea,
+        stand_name as standName,
+        stand_code as standCode,
+        stand_type as standType,
+        stand_date as standDate,
+        stand_unit as standUnit,
+        link as link,
+        other_info as otherInfo
+        FROM standard
+    </select>
+
+</mapper>

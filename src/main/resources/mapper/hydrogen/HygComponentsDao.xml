@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HygComponentsDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HygComponentsEntity">
+        select * from hyg_components WHERE 1=1
+    </select>
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HygComdowEntity">
+        SELECT id as id,
+        co_province as coProvince,
+        co_city as coCity,
+        enterprise as enterprise,
+        enterprise_type as enterpriseType,
+        tech_level as techLevel,
+        project_status as projectStatus,
+        kw as kw,
+        mass as mass,
+        volume as volume,
+        customer as customer,
+        costs_sales as costsSales,
+        temperature as temperature,
+        lifespan as lifespan
+        FROM hyg_components
+    </select>
+
+</mapper>

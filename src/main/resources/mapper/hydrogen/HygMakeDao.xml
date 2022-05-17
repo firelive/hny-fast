@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.hydrogen.dao.HygMakeDao">
+
+    <!-- 查询所有 -->
+    <select id="queryPage"  resultType="io.renren.modules.hydrogen.entity.HygMakeEntity">
+        select * from hyg_make
+    </select>
+
+    <select id="queryDataList"  resultType="io.renren.modules.hydrogen.entity.HygMadowEntity">
+        SELECT mid as mid,
+        area as area,
+        method as method,
+        tech_type as techType,
+        tech_level as techLevel,
+        gorb as gorb,
+        amount as amount,
+        company as company,
+        product as product,
+        com_level as comLevel,
+        capacity as capacity,
+        status_check as statusCheck
+        FROM hyg_make
+    </select>
+
+
+</mapper>

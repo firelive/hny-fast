@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.bzzl.dao.AreaDao">
+
+    <!-- 查询所有 -->
+    <select id="queryArea"  resultType="Map">
+        SELECT * FROM sp_area
+    </select>
+
+
+<!--    -<select resultType="java.util.Map" id="queryDataList">-->
+<!--    select * from runoob_tblwhere 1=1-->
+<!--    <if test="runoob_title != null and runoob_title != ''">and runoob_title=#{runoob_title} </if>-->
+
+<!--    <if test="city_code != null and city_code != ''">and city_code=#{city_code} </if>-->
+
+<!--    </select>-->
+
+<!--    <select resultType="java.util.Map" id="queryCityName">select city_name as label,city_code as value from runoob_tblwhere 1=1 </select>-->
+
+
+
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.demo.dao.NoobDemoDao">
+    <select id="queryDataList"  resultType="java.util.Map">
+        select * from runoob_tbl
+        where 1=1
+        <if test="runoob_title != null and runoob_title != ''">
+            and runoob_title=#{runoob_title}
+        </if>
+        <if test="city_code != null and city_code != ''">
+            and city_code=#{city_code}
+        </if>
+    </select>
+    <select id="queryCityName"  resultType="java.util.Map">
+        select city_name as label,city_code as value from runoob_tbl
+        where 1=1
+        group by label,value
+    </select>
+    <select id="queryArea"  resultType="java.util.Map">
+        select area as label,area as value from runoob_tbl
+        where 1=1
+        and city_code=#{city_code}
+    </select>
+    <select id="insertData"  parameterType="java.util.Map">
+        insert into runoob_tbl (runoob_title,runoob_author,submission_date,city_name,city_code) values (
+        #{runoob_title},
+        #{runoob_author},
+        #{submission_date},
+        #{city_name},
+        #{city_code}
+        )
+    </select>
+    <select id="deleteId"  resultType="java.lang.Integer">
+        update standard set deleted=0 where runoob_id = #{runoob_id}
+    </select>
+
+
+</mapper>
